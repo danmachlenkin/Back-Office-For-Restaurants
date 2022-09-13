@@ -1,0 +1,14 @@
+.container{
+    background-color: #965C05;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img{
+    background: transparent;
+    margin-left: 10px;
+}
+
+.owner{
+    margin-right: 10px;
+}
