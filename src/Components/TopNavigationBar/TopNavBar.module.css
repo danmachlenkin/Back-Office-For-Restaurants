@@ -1,5 +1,6 @@
 .container{
     background-color: #965C05;
+    border-bottom: 2px solid #F8BD4B;
     display: flex;
     justify-content: space-between;
 }

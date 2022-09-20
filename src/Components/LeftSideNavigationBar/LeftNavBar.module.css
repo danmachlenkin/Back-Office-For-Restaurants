@@ -1,16 +1,30 @@
 .container{
-    width: 150px;
+    width: 220px;
     height: 100%;
     background-color: #965C05;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
 }
 
 .section{
     margin: 0px;
     padding: 20px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+    border-bottom: 2px solid #F8BD4B;
+
+}
+
+.actions_container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 10px;
+}
+
+.action {
+    display:inline-block;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
     
 }
