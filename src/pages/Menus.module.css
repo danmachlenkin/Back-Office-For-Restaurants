@@ -1,0 +1,29 @@
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 150px;
+    row-gap: 50px;
+    margin-left: 20px;
+    width: 80%;
+
+}
+
+.exportPDF{
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.exportBtn{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@ import LeftNavBar from "./Components/LeftSideNavigationBar/LeftNavBar";
 import Card from "./Components/UI/Card";
 import Dashboard from "./pages/Dashboards";
 import Catalog from "./pages/Catalog";
+import Menus from "./pages/Menus";
 
 //CSS imports
 import modules from "./App.module.css";
@@ -25,7 +26,8 @@ function App() {
           <section className={modules.display_window}>
             <Card>
               {/* <Dashboard /> */}
-              <Catalog />
+              {/* <Catalog /> */}
+              <Menus />
             </Card>
           </section>
         </main>
