@@ -22,7 +22,7 @@ function App() {
           </nav>
           <section className={modules.display_window}>
             <Card>
-              <Dashboard />
+              {/* <Dashboard /> */}
             </Card>
           </section>
         </main>

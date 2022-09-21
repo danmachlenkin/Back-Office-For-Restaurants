@@ -1,23 +1,11 @@
 //Libraries Imports
-import React, { Fragment, PureComponent } from "react";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import Card from "../UI/Card";
+import React, { Fragment } from "react";
+import { BarChart, Bar, XAxis, YAxis } from "recharts";
 
 //JS imports
 
 //CSS imports
-import modules from './DailyChart.module.css';
-
+import modules from "./DailyChart.module.css";
 
 const DailyChart = () => {
   const data = [
@@ -31,11 +19,13 @@ const DailyChart = () => {
     <Fragment>
       <div className={modules.wrapper}>
         <p>Daily Sales</p>
-        <BarChart width={400} height={200} data={data}>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Bar dataKey="uv" barSize={30} fill="#8884d8" />
-        </BarChart>
+        <div className={modules.chart}>
+          <BarChart width={500} height={200} data={data}>
+            <XAxis dataKey="name" tick={{ fill: "black" }} />
+            <YAxis tick={{ fill: "black" }} />
+            <Bar dataKey="uv" barSize={30} fill="#8884d8" />
+          </BarChart>
+        </div>
       </div>
     </Fragment>
   );
