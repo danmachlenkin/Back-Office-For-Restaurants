@@ -4,8 +4,8 @@ import React, { Fragment } from "react";
 
 //CSS imports
 import modules from "./LeftNavBar.module.css";
-import report_issue_img from "../images/report_issue.png";
-import support_img from "../images/support.png";
+import report_issue_img from "../../images/report_issue.png";
+import support_img from "../../images/support.png";
 
 const LeftNavBar = (props) => {
   const sections = [

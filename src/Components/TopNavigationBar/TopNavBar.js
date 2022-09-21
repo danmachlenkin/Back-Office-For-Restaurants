@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 //CSS imports
 import modules from "./TopNavBar.module.css";
-import image from '../images/logo.png';
+import image from '../../images/logo.png';
 
 const TopNavBar = (props) => {
   return (

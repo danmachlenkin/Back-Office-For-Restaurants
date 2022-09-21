@@ -6,8 +6,15 @@
 
 .main_container{
     height: 100%;
+    display: flex;
 }
 
 .main_container nav{
     height: 100%;
+}
+
+.display_window{
+    width: 82%;
+    height: 94%;
+    margin-left: 15px;
 }
