@@ -4,10 +4,12 @@ import React, { Fragment } from "react";
 import TopNavBar from "./Components/TopNavigationBar/TopNavBar";
 import LeftNavBar from "./Components/LeftSideNavigationBar/LeftNavBar";
 import Card from "./Components/UI/Card";
+import Dashboard from "./pages/Dashboards";
+import Catalog from "./pages/Catalog";
 
 //CSS imports
 import modules from "./App.module.css";
-import Dashboard from "./pages/Dashboards";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <section className={modules.display_window}>
             <Card>
               {/* <Dashboard /> */}
+              <Catalog />
             </Card>
           </section>
         </main>

@@ -1,0 +1,22 @@
+.inputElement{
+    display: block;
+    height: 35px;
+    width: 100%;
+}
+
+.addNewBtn{
+    padding: 10px;
+    background-color: rgb(81, 81, 245);
+    font: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    margin: 15px 45px 0px 0px;
+}
+
+.deleteProductBtn{
+    padding: 10px;
+    background-color: rgb(245, 81, 81);
+    font: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+}
