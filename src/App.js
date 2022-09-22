@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 //JS imports
 import TopNavBar from "./Components/TopNavigationBar/TopNavBar";
@@ -9,12 +9,19 @@ import Catalog from "./pages/Catalog";
 import Menus from "./pages/Menus";
 import Reports from "./pages/Reports";
 import Customers from "./pages/Customers";
+import Inventory from "./pages/Inventory";
 
 //CSS imports
 import modules from "./App.module.css";
 
-
 function App() {
+  const [selectedPage, setSelectedPage] = useState("dashboard");
+
+  const pageSelectionHandler = (pageName) => {
+    console.log(pageName);
+    setSelectedPage(pageName);
+  };
+
   return (
     <Fragment>
       <div className={modules.container}>
@@ -23,16 +30,16 @@ function App() {
         </nav>
         <main className={modules.main_container}>
           <nav>
-            <LeftNavBar />
+            <LeftNavBar selectPage={pageSelectionHandler}/>
           </nav>
           <section className={modules.display_window}>
             <Card>
-              {/* <Dashboard /> */}
-              {/* <Catalog /> */}
-              {/* <Menus /> */}
-              {/* <Reports /> */}
-              <Customers />
-
+              {selectedPage==="dashboard" && <Dashboard />}
+              {selectedPage==="catalog" && <Catalog />}
+              {selectedPage==="menus" && <Menus />}
+              {selectedPage==="reports" && <Reports />}
+              {selectedPage==="customers" && <Customers />}
+              {selectedPage==="inventory" && <Inventory />}
             </Card>
           </section>
         </main>
