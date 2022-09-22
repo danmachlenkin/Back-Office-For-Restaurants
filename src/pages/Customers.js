@@ -1,13 +1,15 @@
 import React, { Fragment } from "react";
+import CustomersList from "../Components/Customers/CustomersList";
 
 //JS imports
-import ExistingCustomers from "../Components/Customers/ExistingCustomers";
+import FilterCustomers from "../Components/Customers/FilterCustomers";
 //CSS imports
 
 const Customers = () => {
     
     return <Fragment>
-        <ExistingCustomers/>
+        <FilterCustomers/>
+        <CustomersList />
     </Fragment>
 };
 
