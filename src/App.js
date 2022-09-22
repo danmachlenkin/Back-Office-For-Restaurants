@@ -7,6 +7,7 @@ import Card from "./Components/UI/Card";
 import Dashboard from "./pages/Dashboards";
 import Catalog from "./pages/Catalog";
 import Menus from "./pages/Menus";
+import Reports from "./pages/Reports";
 
 //CSS imports
 import modules from "./App.module.css";
@@ -27,7 +28,8 @@ function App() {
             <Card>
               {/* <Dashboard /> */}
               {/* <Catalog /> */}
-              <Menus />
+              {/* <Menus /> */}
+              <Reports />
             </Card>
           </section>
         </main>
