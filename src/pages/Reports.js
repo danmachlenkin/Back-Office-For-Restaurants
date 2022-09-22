@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 //JS imports
-
+import TimeRange from "../Components/Reports/TimeRange";
 
 //CSS imports
 import modules from './Reports.module.css';
@@ -18,9 +18,9 @@ const Reports = () => {
             </select>
         </div>
         <div>
-            {/* <TimeRange /> */}
+            <TimeRange />
         </div>
-        <button>Download!</button>
+        <button className={modules.downloadBtn}>Download Report</button>
     </Fragment>
 
 };

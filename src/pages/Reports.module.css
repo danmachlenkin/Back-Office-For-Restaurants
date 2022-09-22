@@ -1,0 +1,13 @@
+select{
+    width: 350px;
+    padding: 15px;
+}
+
+.downloadBtn{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    margin-top: 20px;
+}

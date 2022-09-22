@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboards";
 import Catalog from "./pages/Catalog";
 import Menus from "./pages/Menus";
 import Reports from "./pages/Reports";
+import Customers from "./pages/Customers";
 
 //CSS imports
 import modules from "./App.module.css";
@@ -29,7 +30,9 @@ function App() {
               {/* <Dashboard /> */}
               {/* <Catalog /> */}
               {/* <Menus /> */}
-              <Reports />
+              {/* <Reports /> */}
+              <Customers />
+
             </Card>
           </section>
         </main>

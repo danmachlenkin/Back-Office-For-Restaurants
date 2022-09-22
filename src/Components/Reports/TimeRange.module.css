@@ -1,0 +1,14 @@
+.contentWrapper{
+    margin-top: 25px;
+    display: flex;
+}
+
+.checkBoxesContainer {
+    margin-left: 20px;
+    margin: auto 20px ;
+}
+
+.checkBoxesContainer input{
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
