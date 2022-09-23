@@ -1,0 +1,46 @@
+.select{
+    width: 100%;
+    padding: 10px;
+
+}
+
+.emailInput{
+    width: 20%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 25px; 
+    margin-bottom: 20px;
+}
+
+.textArea{
+    display: block;
+    width: 100%;
+    height: 250px;
+    border: 2px solid wheat ;
+    margin-top: 7px;
+
+}
+
+.actionsWrapper{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.submitBtn{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.uploadBtn{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
