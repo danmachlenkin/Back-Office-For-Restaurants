@@ -35,7 +35,7 @@ const YearlyChart = () => {
   return (
     <Fragment>
       <div className={modules.wrapper}>
-        <p>Yearly Gross Income</p>
+      <h3 style={{marginTop:'0px' }}>Yearly Gross Income</h3>
         <LineChart
           width={800}
           height={250}
