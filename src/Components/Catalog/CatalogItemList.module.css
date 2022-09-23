@@ -5,3 +5,10 @@
     padding: 15px 5px;
     margin-top: 25px;
 }
+
+
+.listHeadLines{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}

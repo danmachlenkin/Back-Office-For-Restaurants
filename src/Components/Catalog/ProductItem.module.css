@@ -1,0 +1,6 @@
+.productDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 20px;
+}
