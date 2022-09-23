@@ -10,7 +10,12 @@
     padding: 20px;
     border-bottom: 2px solid #F8BD4B;
     cursor: pointer;
+    text-align: center;
 
+}
+
+.selected{
+    color: #F8BD4B;
 }
 
 .actions_container{

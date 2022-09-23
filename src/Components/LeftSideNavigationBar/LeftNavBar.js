@@ -29,11 +29,11 @@ const LeftNavBar = (props) => {
           <h3 className={modules.section} onClick={liftPageSelectionState}>{item}</h3>
         ))}
         <div className={modules.actions_container}>
-          <div className={modules.action} style={{marginLeft: '10px'}}>
+          <div className={modules.action} style={{marginLeft: '10px'}} onClick={liftPageSelectionState}>
             <p>Report An Issue</p>
             <img src={report_issue_img} alt="report_issue" width="50px" height="50px" style={{marginLeft: '20px'}} />
           </div>
-          <div className={modules.action}>
+          <div className={modules.action} onClick={liftPageSelectionState}>
             <p>Support</p>
             <img  src={support_img}  alt="support"  width="50px"  height="50px" />
           </div>

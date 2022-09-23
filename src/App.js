@@ -10,7 +10,8 @@ import Menus from "./pages/Menus";
 import Reports from "./pages/Reports";
 import Customers from "./pages/Customers";
 import Inventory from "./pages/Inventory";
-
+import Billing from "./pages/Billing";
+import IssueReport from "./pages/IssueReport";
 //CSS imports
 import modules from "./App.module.css";
 
@@ -40,6 +41,8 @@ function App() {
               {selectedPage==="reports" && <Reports />}
               {selectedPage==="customers" && <Customers />}
               {selectedPage==="inventory" && <Inventory />}
+              {selectedPage==="billing" && <Billing />}
+              {selectedPage==="report an issue" && <IssueReport />}
             </Card>
           </section>
         </main>
