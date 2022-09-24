@@ -4,11 +4,16 @@
     background-color: rgb(245, 241, 206);
     padding: 15px 5px;
     margin-top: 25px;
+
 }
 
 
 .listHeadLines{
     display: flex;
-    justify-content: space-evenly;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.listHeadLines span{
+    margin: 0px 315px 0px 10px;
 }
