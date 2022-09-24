@@ -10,6 +10,7 @@ const Catalog = () => {
   const [addNewProductStatus,setAddNewProductStatus] = useState(false);
 
   const addNewProductStatusHandler = (e) => {
+    console.log(e)
     if(e.target.innerText==='Add New'){
       setAddNewProductStatus(true);
     }else{

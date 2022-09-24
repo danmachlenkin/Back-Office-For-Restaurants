@@ -6,7 +6,7 @@ import AddNewProduct from "./AddNewProduct";
 //CSS imports
 import modules from "./CatalogItemList.module.css";
 
-const DUMMY_DATA = [
+let DUMMY_DATA = [
   { name: "Humus Bowl", price: 35, itemId: 1 },
   { name: "Shawarma Plate", price: 55, itemId: 2 },
   { name: "Fish & Chips", price: 40, itemId: 3 },
@@ -15,15 +15,30 @@ const DUMMY_DATA = [
 ];
 
 const CatalogItemList = (props) => {
+  const updateListData = (name, price, e) => {
+    DUMMY_DATA = [
+      ...DUMMY_DATA,
+      {
+        name: name.current.value,
+        price: price.current.value,
+        itemId: DUMMY_DATA[DUMMY_DATA.length - 1].itemId + 1,
+      },
+    ];
+    props.saveNewProductAction(e);
+  };
+
   let isAddNewProductActive = props.isAddNewProductActive;
-  console.log(isAddNewProductActive)
+  console.log(isAddNewProductActive);
   let saveNewProductAction = props.saveNewProductAction;
   return (
     <Fragment>
       <div className={modules.contentWrapper}>
         {isAddNewProductActive ? (
           <div>
-            <AddNewProduct saveNewProductAction={saveNewProductAction}/>
+            <AddNewProduct
+              saveNewProductAction={saveNewProductAction}
+              productInfo={updateListData}
+            />
           </div>
         ) : (
           <div>

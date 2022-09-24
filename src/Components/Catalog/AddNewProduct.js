@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 
 //JS imports
 
 //CSS imports
 
 const AddNewProduct = (props) => {
-    let saveNewProductAction = props.saveNewProductAction;
+  let saveNewProductAction = props.saveNewProductAction;
+  const newProductName = useRef();
+  const newProductPrice = useRef();
 
-    return <div>
-        <label>Name:</label>
-        <input type="text"/> 
-        <label>Price:</label>
-        <input type="number"/>
-        <button onClick={saveNewProductAction}>Save</button>      
-    </div>
+    const formDataHandler = (e) => {
+        e.preventDefault();
+        props.productInfo(newProductName,newProductPrice,e);
+    }
+
+  return (
+    <form onSubmit={formDataHandler}>
+      <label>Name:</label>
+      <input type="text" ref={newProductName} />
+      <label>Price:</label>
+      <input type="number" ref={newProductPrice} />
+      <button type="submit">
+        Save
+      </button>
+    </form>
+  );
 };
 
 export default AddNewProduct;
