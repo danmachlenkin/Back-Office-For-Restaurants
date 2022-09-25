@@ -16,7 +16,7 @@ const CheckBoxs = (props) => {
     let updatedCheckedState = checkedState.map((item,index) => {
        return position === index ? !item : false;
     })
-
+    props.selectedTime(options[position])
     setCheckedState(updatedCheckedState);
   }
 

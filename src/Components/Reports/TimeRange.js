@@ -9,17 +9,25 @@ import modules from './TimeRange.module.css';
 import 'react-calendar/dist/Calendar.css';
 
 const TimeRange = () => {
+  const [selectedReportTimeRange,setSelectedRepoprtTimeRange] = useState('')
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const changeCurrentDate = (date) => {
     setCurrentDate(date);
+    setSelectedRepoprtTimeRange(date)
   };
+
+  const reportTimeRangeHandler = (e) => {
+      setSelectedRepoprtTimeRange(e);
+  }
+  console.log(selectedReportTimeRange);
+
 
   return (
     <div className={modules.contentWrapper}>
       <Calendar onChange={changeCurrentDate} value={currentDate} />
       <div className={modules.checkBoxesContainer}>
-        <CheckBoxs/>
+        <CheckBoxs selectedTime={reportTimeRangeHandler}/>
         {/* <input type="checkbox" id="today" name="today" />
         <label htmlFor="today">Today</label><br/>
         <input type="checkbox" id="yesterday" name="yesterday" />
