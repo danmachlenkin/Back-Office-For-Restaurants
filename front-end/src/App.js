@@ -14,9 +14,11 @@ import Billing from "./pages/Billing";
 import IssueReport from "./pages/IssueReport";
 //CSS imports
 import modules from "./App.module.css";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("dashboard");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const pageSelectionHandler = (pageName) => {
     console.log(pageName);
@@ -25,28 +27,34 @@ function App() {
 
   return (
     <Fragment>
-      <div className={modules.container}>
-        <nav>
-          <TopNavBar />
-        </nav>
-        <main className={modules.main_container}>
-          <nav>
-            <LeftNavBar selectPage={pageSelectionHandler}/>
-          </nav>
-          <section className={modules.display_window}>
-            <Card>
-              {selectedPage==="dashboard" && <Dashboard />}
-              {selectedPage==="catalog" && <Catalog />}
-              {selectedPage==="menus" && <Menus />}
-              {selectedPage==="reports" && <Reports />}
-              {selectedPage==="customers" && <Customers />}
-              {selectedPage==="inventory" && <Inventory />}
-              {selectedPage==="billing" && <Billing />}
-              {selectedPage==="report an issue" && <IssueReport />}
-            </Card>
-          </section>
-        </main>
-      </div>
+      {isLoggedIn ? (
+        <div>
+          <div className={modules.container}>
+            <nav>
+              <TopNavBar />
+            </nav>
+            <main className={modules.main_container}>
+              <nav>
+                <LeftNavBar selectPage={pageSelectionHandler} />
+              </nav>
+              <section className={modules.display_window}>
+                <Card>
+                  {selectedPage === "dashboard" && <Dashboard />}
+                  {selectedPage === "catalog" && <Catalog />}
+                  {selectedPage === "menus" && <Menus />}
+                  {selectedPage === "reports" && <Reports />}
+                  {selectedPage === "customers" && <Customers />}
+                  {selectedPage === "inventory" && <Inventory />}
+                  {selectedPage === "billing" && <Billing />}
+                  {selectedPage === "report an issue" && <IssueReport />}
+                </Card>
+              </section>
+            </main>
+          </div>
+        </div>
+      ) : (
+        <div> <LoginPage /></div>
+      )}
     </Fragment>
   );
 }
