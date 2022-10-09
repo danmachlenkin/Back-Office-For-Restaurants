@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 
 //JS imports
 
@@ -8,6 +8,8 @@ import modules from './Login.module.css';
 
 
 const Login = (props) => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
     const loginStatusHandler = ()=> {
         //User wants to register
@@ -17,7 +19,8 @@ const Login = (props) => {
     const loginRequestHandler = (el) => {
         el.preventDefault();
         //Validate user data from form fields
-
+          console.log(emailRef.current.value)
+          console.log(passwordRef.current.value)
         //Log user into the app
         props.loginRequested(true);
     }
@@ -28,11 +31,11 @@ const Login = (props) => {
         <h3>Login To Your Account</h3>
         <div className={modules.contentDiv}>
           <label>Email</label>
-          <input type="text"></input>
+          <input type="text" ref={emailRef}></input>
         </div>
         <div className={modules.contentDiv}>
           <label>Password</label>
-          <input type="password"></input>
+          <input type="password" ref={passwordRef}></input>
         </div>
         <div>
             <button className={modules.loginBtn} type="submit" onClick={loginRequestHandler}>Login</button>

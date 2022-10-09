@@ -1,4 +1,6 @@
+//Libraries Imports
 import React, { Fragment, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 //JS imports
 import TopNavBar from "./Components/TopNavigationBar/TopNavBar";
@@ -27,38 +29,38 @@ function App() {
 
   const loginSucessHandler = (bool) => {
     setIsLoggedIn(bool);
-  }
+  };
 
   return (
     <Fragment>
-      {isLoggedIn ? (
-        <div>
-          <div className={modules.container}>
-            <nav>
-              <TopNavBar />
-            </nav>
-            <main className={modules.main_container}>
-              <nav>
-                <LeftNavBar selectPage={pageSelectionHandler} />
-              </nav>
-              <section className={modules.display_window}>
-                <Card>
-                  {selectedPage === "dashboard" && <Dashboard />}
-                  {selectedPage === "catalog" && <Catalog />}
-                  {selectedPage === "menus" && <Menus />}
-                  {selectedPage === "reports" && <Reports />}
-                  {selectedPage === "customers" && <Customers />}
-                  {selectedPage === "inventory" && <Inventory />}
-                  {selectedPage === "billing" && <Billing />}
-                  {selectedPage === "report an issue" && <IssueReport />}
-                </Card>
-              </section>
-            </main>
-          </div>
-        </div>
-      ) : (
-        <div> <LoginPage isLoginSucessfull={loginSucessHandler}/></div>
-      )}
+      <Routes>
+          {isLoggedIn ? (
+            <Route path="/" element={<div>
+              <div className={modules.container}>
+                <nav>
+                  <TopNavBar />
+                </nav>
+                <main className={modules.main_container}>
+                  <nav>
+                    <LeftNavBar selectPage={pageSelectionHandler} />
+                  </nav>
+                  <section className={modules.display_window}>
+                    <Card>
+                      {selectedPage === "dashboard" && <Dashboard />}
+                      {selectedPage === "catalog" && <Catalog />}
+                      {selectedPage === "menus" && <Menus />}
+                      {selectedPage === "reports" && <Reports />}
+                      {selectedPage === "customers" && <Customers />}
+                      {selectedPage === "inventory" && <Inventory />}
+                      {selectedPage === "billing" && <Billing />}
+                      {selectedPage === "report an issue" && <IssueReport />}
+                    </Card>
+                  </section>
+                </main>
+              </div>
+            </div>}>
+           </Route>) : ( <Route element={<div><LoginPage isLoginSucessfull={loginSucessHandler} /> </div>} path="/register"></Route> )}
+            </Routes>
     </Fragment>
   );
 }
