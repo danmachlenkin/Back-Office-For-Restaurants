@@ -1,0 +1,43 @@
+.formDisplay{
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 100%;
+}
+.formDisplay h3{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.formDisplay input{
+    width: 97%;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: rgb(243, 240, 240);
+    
+}
+.contentDiv{
+    margin-top: 20px;
+}
+.loginBtn{
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    background-color: #0ba6ff;
+}
+.loginBtn:hover{
+    background-color: #0bff50;
+    cursor: pointer;
+}
+
+.registerBtn{
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+.registerBtn:hover{
+    background-color: #ffce0b;
+    cursor: pointer;
+}

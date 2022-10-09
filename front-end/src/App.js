@@ -25,6 +25,10 @@ function App() {
     setSelectedPage(pageName);
   };
 
+  const loginSucessHandler = (bool) => {
+    setIsLoggedIn(bool);
+  }
+
   return (
     <Fragment>
       {isLoggedIn ? (
@@ -53,7 +57,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <div> <LoginPage /></div>
+        <div> <LoginPage isLoginSucessfull={loginSucessHandler}/></div>
       )}
     </Fragment>
   );
