@@ -33,6 +33,7 @@ function App() {
   if(isLoggedIn){
     return <>
     <LoginPage />
+    <p>test routing</p>
     </>
   }else{
     return (
