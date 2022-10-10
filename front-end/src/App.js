@@ -1,12 +1,10 @@
 //Libraries Imports
-import React, { Fragment, useState } from "react";
-import { createRoot } from "react-dom/client";
+import React, { useState } from "react";
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
+  BrowserRouter as Router,
   Route,
-  Link,
+  Routes,
+  Navigate,
 } from "react-router-dom";
 
 //JS imports
@@ -27,24 +25,10 @@ import LoginPage from "./pages/LoginPage";
 import ProtectedRoutes from "./util/protectedRoutes";
 
 //Definning Router
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<ProtectedRoutes />}>
-      <Route path="/dashboard" element={<Dashboard />}></Route>
-      <Route path="/catalog" element={<Catalog />}></Route>
-      <Route path="/customers" element={<Customers />}></Route>
-      <Route path="/inventory" element={<Inventory />}></Route>
-      <Route path="/menus" element={<Menus />}></Route>
-      <Route path="/reports" element={<Reports />}></Route>
-      <Route path="/billing" element={<Billing />}></Route>
-      <Route path="/issueReport" element={<IssueReport />}></Route>
-    </Route>
-  )
-);
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("dashboard");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const pageSelectionHandler = (pageName) => {
     console.log(pageName);
@@ -55,46 +39,65 @@ function App() {
     setIsLoggedIn(bool);
   };
 
-  return <RouterProvider router={router} />
- 
+  return (
+    <Router>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            isLoggedIn ? (
+              <div>
+                <div className={modules.container}>
+                  <nav>
+                    <TopNavBar />
+                  </nav>
+                  <main className={modules.main_container}>
+                    <nav>
+                      <LeftNavBar selectPage={pageSelectionHandler} />
+                    </nav>
+                    <section className={modules.display_window}>
+                      <Card>
+                        {selectedPage === "dashboard" && <Dashboard />}
+                        {selectedPage === "catalog" && <Catalog />}
+                        {selectedPage === "menus" && <Menus />}
+                        {selectedPage === "reports" && <Reports />}
+                        {selectedPage === "customers" && <Customers />}
+                        {selectedPage === "inventory" && <Inventory />}
+                        {selectedPage === "billing" && <Billing />}
+                        {selectedPage === "report an issue" && <IssueReport />}
+                      </Card>
+                    </section>
+                  </main>
+                </div>
+              </div>
+            ) : (
+              <LoginPage />
+            )
+          }
+        ></Route>
+      </Routes>
 
+      {/* <Routes>
+        <div>
+          <div className={modules.container}>
+            <nav>
+              <TopNavBar />
+            </nav>
+            <main className={modules.main_container}>
+              <nav>
+                <LeftNavBar selectPage={pageSelectionHandler} />
+              </nav>
+              <section className={modules.display_window}>
+                <Card>
+                  
+                </Card>
+              </section>
+            </main>
+          </div>
+        </div>
+      </Routes> */}
+    </Router>
+  );
 }
 export default App;
-
-//   if (isLoggedIn) {
-//     return (
-//       <>
-//         <LoginPage />
-//       </>
-//     );
-//   } else {
-//     return (
-//       <>
-//         <div>
-//           <div className={modules.container}>
-//             <nav>
-//               <TopNavBar />
-//             </nav>
-//             <main className={modules.main_container}>
-//               <nav>
-//                 <LeftNavBar selectPage={pageSelectionHandler} />
-//               </nav>
-//               <section className={modules.display_window}>
-//                 <Card>
-//                   {selectedPage === "dashboard" && <Dashboard />}
-//                   {selectedPage === "catalog" && <Catalog />}
-//                   {selectedPage === "menus" && <Menus />}
-//                   {selectedPage === "reports" && <Reports />}
-//                   {selectedPage === "customers" && <Customers />}
-//                   {selectedPage === "inventory" && <Inventory />}
-//                   {selectedPage === "billing" && <Billing />}
-//                   {selectedPage === "report an issue" && <IssueReport />}
-//                 </Card>
-//               </section>
-//             </main>
-//           </div>
-//         </div>
-//       </>
-//     );
-//   }
-// }

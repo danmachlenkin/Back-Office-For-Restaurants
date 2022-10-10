@@ -6,6 +6,7 @@ import DailyChart from "../Components/Dashboard/DailyChart";
 import MonthlyChart from "../Components/Dashboard/MonthlyChart";
 import YearlyChart from "../Components/Dashboard/YearlyChart";
 
+
 //CSS imports
 import modules from "./Dashboard.module.css";
 
