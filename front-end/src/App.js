@@ -1,5 +1,13 @@
 //Libraries Imports
 import React, { Fragment, useState } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 
 //JS imports
 import TopNavBar from "./Components/TopNavigationBar/TopNavBar";
@@ -16,6 +24,23 @@ import IssueReport from "./pages/IssueReport";
 //CSS imports
 import modules from "./App.module.css";
 import LoginPage from "./pages/LoginPage";
+import ProtectedRoutes from "./util/protectedRoutes";
+
+//Definning Router
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<ProtectedRoutes />}>
+      <Route path="/dashboard" element={<Dashboard />}></Route>
+      <Route path="/catalog" element={<Catalog />}></Route>
+      <Route path="/customers" element={<Customers />}></Route>
+      <Route path="/inventory" element={<Inventory />}></Route>
+      <Route path="/menus" element={<Menus />}></Route>
+      <Route path="/reports" element={<Reports />}></Route>
+      <Route path="/billing" element={<Billing />}></Route>
+      <Route path="/issueReport" element={<IssueReport />}></Route>
+    </Route>
+  )
+);
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("dashboard");
@@ -30,41 +55,46 @@ function App() {
     setIsLoggedIn(bool);
   };
 
-  if(isLoggedIn){
-    return <>
-    <LoginPage />
-    <p>test routing</p>
-    </>
-  }else{
-    return (
-      <>
-        <div>
-          <div className={modules.container}>
-            <nav>
-              <TopNavBar />
-            </nav>
-            <main className={modules.main_container}>
-              <nav>
-                <LeftNavBar selectPage={pageSelectionHandler} />
-              </nav>
-              <section className={modules.display_window}>
-                <Card>
-                  {selectedPage === "dashboard" && <Dashboard />}
-                  {selectedPage === "catalog" && <Catalog />}
-                  {selectedPage === "menus" && <Menus />}
-                  {selectedPage === "reports" && <Reports />}
-                  {selectedPage === "customers" && <Customers />}
-                  {selectedPage === "inventory" && <Inventory />}
-                  {selectedPage === "billing" && <Billing />}
-                  {selectedPage === "report an issue" && <IssueReport />}
-                </Card>
-              </section>
-            </main>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
+  return <RouterProvider router={router} />
+ 
 
+}
 export default App;
+
+//   if (isLoggedIn) {
+//     return (
+//       <>
+//         <LoginPage />
+//       </>
+//     );
+//   } else {
+//     return (
+//       <>
+//         <div>
+//           <div className={modules.container}>
+//             <nav>
+//               <TopNavBar />
+//             </nav>
+//             <main className={modules.main_container}>
+//               <nav>
+//                 <LeftNavBar selectPage={pageSelectionHandler} />
+//               </nav>
+//               <section className={modules.display_window}>
+//                 <Card>
+//                   {selectedPage === "dashboard" && <Dashboard />}
+//                   {selectedPage === "catalog" && <Catalog />}
+//                   {selectedPage === "menus" && <Menus />}
+//                   {selectedPage === "reports" && <Reports />}
+//                   {selectedPage === "customers" && <Customers />}
+//                   {selectedPage === "inventory" && <Inventory />}
+//                   {selectedPage === "billing" && <Billing />}
+//                   {selectedPage === "report an issue" && <IssueReport />}
+//                 </Card>
+//               </section>
+//             </main>
+//           </div>
+//         </div>
+//       </>
+//     );
+//   }
+// }
