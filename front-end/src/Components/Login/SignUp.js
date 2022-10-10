@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 //JS imports
 
@@ -6,6 +7,7 @@ import React, { useRef } from "react";
 import modules from "./SingUp.module.css";
 
 const SignUp = (props) => {
+  const navigate = useNavigate();
   const fullNameRef = useRef();
   const businessNameRef = useRef();
   const emailRef = useRef();
@@ -27,6 +29,7 @@ const SignUp = (props) => {
       console.log(confirmPasswordRef.current.value)
     //Log user into the app
     props.loginRequested(true);
+    navigate('/');
   };
 
   return (

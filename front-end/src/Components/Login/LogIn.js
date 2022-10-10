@@ -1,4 +1,6 @@
+//Libraries Imports
 import React,{useRef} from "react";
+import { useNavigate } from "react-router-dom";
 
 //JS imports
 
@@ -8,6 +10,7 @@ import modules from './Login.module.css';
 
 
 const Login = (props) => {
+  const navigate= useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -23,6 +26,7 @@ const Login = (props) => {
           console.log(passwordRef.current.value)
         //Log user into the app
         props.loginRequested(true);
+        navigate('/');
     }
 
   return (
@@ -38,7 +42,7 @@ const Login = (props) => {
           <input type="password" ref={passwordRef}></input>
         </div>
         <div>
-            <button className={modules.loginBtn} type="submit" onClick={loginRequestHandler}>Login</button>
+          <button className={modules.loginBtn} type="submit" onClick={loginRequestHandler}>Login</button>
         </div>
         <div>
             <button className={modules.registerBtn} type="button" onClick={loginStatusHandler}>I Want To Register</button>
